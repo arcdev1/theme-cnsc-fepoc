@@ -3,12 +3,15 @@
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
  */
 ;(function ($, wb, window) {
-  'use strict'
+  'use strict';
   window.poc = {
     // USERS & AUTHENTICATION
     getCurrentUser: getCurrentUser,
     signIn: signIn,
 
+	// CMS
+	cms: getCmsClient(),
+	  
     // LICENCES
     getLicenceList: getLicenceList,
     getSelectedLicence: getSelectedLicence,
@@ -18,20 +21,20 @@
     // DATA TABLE HELPER
     addRowClickHandler: addRowClickHandler,
     bindDataToTable: bindDataToTable
-  }
+  };
 
-  var API_ROOT = 'https://cnsc-poc-api.azurewebsites.net/api/'
+  var API_ROOT = 'https://cnsc-poc-api.azurewebsites.net/api/';
 
   /* -----------------------------
    * USERS AND AUTHENTICATION
    *----------------------------- */
   function signIn (email, password, redirect, store, location) {
-    location = location || window.location
+    location = location || window.location;
     $.get(API_ROOT + '/users/1234', function (user) {
-      user.email = user.email || email
-      cacheUser(user, store)
-      location.href = redirect
-    })
+      user.email = user.email || email;
+      cacheUser(user, store);
+      location.href = redirect;
+    });
   }
 
   function cacheUser (user, store) {
@@ -51,7 +54,24 @@
     }
     location.href = '/index-' + wb.lang + '.html'
   }
+	
+  /* -----------------------------
+   * CMS
+   *----------------------------- */
+	function getCmsClient() {
+			const SPACE_ID = 'i1v307pa7u1u'
+			const ACCESS_TOKEN = '8889ff8f66619853cbfe8900690fc667e3b95467a53c843066a6e5145f9acec0'
 
+			const client = contentful.createClient({
+				// This is the space ID. A space is like a project folder in Contentful terms
+				space: SPACE_ID,
+				// This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+				accessToken: ACCESS_TOKEN
+			})
+			
+			return client;
+	}
+	
   /* -----------------------------
    * LICENCES
    *----------------------------- */

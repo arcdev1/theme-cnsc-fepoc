@@ -1,0 +1,65 @@
+---
+{
+	"title": "<%= language === 'en' ? 'Calendar of Commission proceedings' : 'Calendrier des séances de la Commission' %>",
+	"altLangPrefix": "hearings",
+	"tag": "theme-gcwu-fegc",
+	"dateModified": "2018-07-30"
+}
+---
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover datatable no-footer" id="tbl-hearings">
+            <thead>
+                <tr>
+                    <th scope="col">{{{i18n "ttl-date"}}}</th>
+                    <th scope="col">{{{i18n "ttl-application"}}}</th>
+                    <th scope="col">{{{i18n "ttl-location"}}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">{{{i18n "msg-loading"}}}...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+<script>
+    (function (window) {
+        document.addEventListener(
+            'DOMContentLoaded',
+            function () { getContent() }
+        );
+	
+		function getContent() {		
+			poc.cms.getEntries( {content_type: 'commissionHearingSummary', locale: `${wb.lang}-CA`})
+  				.then(entries => {
+					console.log(entries)
+					renderContent(entries)
+				})
+  				.catch(err => console.log(err));
+		}
+		
+		function renderContent(hearingList) {			
+            var data = make2DArray(hearingList)
+            var $table = $('#tbl-hearings')
+            var options = {
+                searching: false,
+				ordering: false,
+				info: false,
+				paging: false
+            }
+            poc.bindDataToTable(data, $table, options)
+		}
+		
+		function make2DArray(hearingList) {
+			return hearingList.items.reduce((acc, item) => {
+				 acc.push([item.fields.date, marked(item.fields.application), marked(item.fields.location)]);
+				return acc;
+			}, [])
+		}
+		
+		
+    }(this));
+</script>

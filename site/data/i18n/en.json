@@ -16,5 +16,9 @@
     "ttl-effective-date": "Effective Date",
     "ttl-expiry-date": "Expiry Date",
     "ttl-licence-list": "Licences",
-    "ttl-licence-number": "Licence Number"
+    "ttl-licence-number": "Licence Number",
+	"ttl-date": "Date",
+	"ttl-application": "Application",
+	"ttl-location": "Location"
+	
 }

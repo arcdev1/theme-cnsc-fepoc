@@ -1,0 +1,38 @@
+---
+{
+	"title": "<%= language === 'en' ? 'Welcome' : 'Bienvenue' %>",
+	"altLangPrefix": "about-us",
+	"tag": "theme-gcwu-fegc",
+	"dateModified": "2018-07-30"
+}
+---
+<section>
+	<header>
+		<h2 id="contentTitle">{{{i18n "msg-loading"}}}...</h2>
+	</header>
+ 	<div id="contentBody">{{{i18n "msg-loading"}}}...</div>
+</section>
+
+<script>
+    (function (window) {
+        document.addEventListener(
+            'DOMContentLoaded',
+            function () { getContent() }
+        );
+	
+		function renderContent(title, body) {
+			
+			document.getElementById('contentTitle').innerHTML = title;
+			document.getElementById('contentBody').innerHTML = body;
+		}
+		
+		function getContent() {		
+			poc.cms.getEntry("3qWAybVGsoyiuY2kaM84gY", {locale: `${wb.lang}-CA`})
+  				.then(entry => {
+					console.log(entry)
+					renderContent(entry.fields.title, marked(entry.fields.body))
+				})
+  				.catch(err => console.log(err));
+		}
+    }(this));
+</script>
