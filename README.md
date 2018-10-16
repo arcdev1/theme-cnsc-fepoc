@@ -42,16 +42,16 @@ installer is the preffered method. Follow the instructions below.
 
 #### Direct from the Vendor install
 
-*Git*
+##### Git
 Navigate to: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-*NodeJS*
+##### NodeJS
 Navigate to: https://nodejs.org and download and install the latest "Stable Release" of Node.
 
-*Python*
+##### Python
 Navigate to: https://www.python.org/downloads/ and download and install Python 2.7.x 
 
-*node-sass*
+##### node-sass
 After installing Node, open a command prompt and type
 ```bash
 npm i -g node-sass
