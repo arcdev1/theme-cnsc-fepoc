@@ -70,6 +70,9 @@ cd script
 setup
 ```
 
+*Note:* Mac users should use `sh setup` instead.
+
+
 ## Editing .hbs files in Dreamweaver Design View
 To enable editing `.hbs` files in Dreamweaver Design view you need to add
 the HBS extension as an HTML type to the `Extensions.txt` file and to the 
