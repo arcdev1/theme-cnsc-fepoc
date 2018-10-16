@@ -69,7 +69,7 @@ npm i -g node-sass
 ### 2. Cloning this repo
 At the comand prompt type:
 ```bash
-git clone https://github.com/arcdev1/theme-cnsc-fepoc.git
+git -c http.sslVerify=false clone https://github.com/arcdev1/theme-cnsc-fepoc.git
 ```
 
 ### 3. Run the setup script
