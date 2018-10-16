@@ -82,6 +82,11 @@ setup
 
 *Note:* Mac users should use `sh setup` instead.
 
+## Building the Site
+From the project's root folder `/theme-cnsc-fepoc` run the following command:
+```bash
+grunt 
+```
 
 ## Editing .hbs files in Dreamweaver Design View
 To enable editing `.hbs` files in Dreamweaver Design view you need to add
