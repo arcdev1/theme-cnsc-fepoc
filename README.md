@@ -46,7 +46,7 @@ installer is the preffered method. Follow the instructions below.
 Navigate to: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git and follow the installation instructions for your OS. Use the default settings when installing (Next, Next, Next....)
 
 ##### NodeJS
-Navigate to: https://nodejs.org and download and install the latest "Stable Release" of Node.
+Navigate to: https://nodejs.org and download and install the latest "LTS" version of Node.
 
 ##### Python
 Navigate to: https://www.python.org/downloads/ and download and install Python 2.7.x 
