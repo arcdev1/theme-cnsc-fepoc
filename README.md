@@ -79,12 +79,12 @@ cd theme-cnsc-fepoc
 cd script
 setup
 ```
+*Note:* Mac users should use `sh setup` instead.
+
 If you see errors relating to `postinstall` run the following command from the project root `/theme-cnsc-fepoc`
 ```bash
 npm run postinstall
 ```
-
-*Note:* Mac users should use `sh setup` instead.
 
 ## Building the Site
 From the project's root folder `/theme-cnsc-fepoc` run the following command:
