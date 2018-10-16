@@ -56,6 +56,11 @@ After installing Node, open a command prompt and type
 ```bash
 npm i -g node-sass
 ```
+If you get an error about SELF_SIGNED SSL CERTS run 
+```
+npm config set strict-ssl false
+npm config set registry="http://registry.npmjs.org/"
+```
 
 ### 2. Cloning this repo
 At the comand prompt type:
