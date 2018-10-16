@@ -75,6 +75,7 @@ git -c http.sslVerify=false clone https://github.com/arcdev1/theme-cnsc-fepoc.gi
 ### 3. Run the setup script
 Run the setup script from /script folder in the project directory:
 ```bash 
+cd theme-cnsc-fepoc
 cd script
 setup
 ```
