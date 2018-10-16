@@ -42,6 +42,9 @@ installer is the preffered method. Follow the instructions below.
 
 #### Direct from the Vendor install
 
+*Git*
+Navigate to: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
 *NodeJS*
 Navigate to: https://nodejs.org and download and install the latest "Stable Release" of Node.
 
