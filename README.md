@@ -91,6 +91,16 @@ From the project's root folder `/theme-cnsc-fepoc` run the following command:
 ```bash
 grunt 
 ```
+## Serving the Site from Localhost
+Install `httpster` with the following command:
+```bash
+npm i -g httpster
+```
+Then from the site root:
+```bash
+cd dist
+httpster
+```
 
 ## Editing .hbs files in Dreamweaver Design View
 To enable editing `.hbs` files in Dreamweaver Design view you need to add
