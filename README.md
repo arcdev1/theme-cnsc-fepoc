@@ -64,6 +64,9 @@ Open a command prompy and run:
 git -c http.sslVerify=false clone https://github.com/arcdev1/theme-cnsc-fepoc.git
 ```
 
+Alternatively, to start fresh, you can download the GCWU theme directly from:
+https://github.com/wet-boew/theme-gcwu-fegc/archive/v4.0.27.zip
+
 ### 3. Run the setup script
 At the command prompt, run the following commands:
 ```bash
