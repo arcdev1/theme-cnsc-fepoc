@@ -5,7 +5,7 @@ A CNSC proof-of-concept implementation of the Government of Canada (GC) Web Usab
 
 ## Getting Started
 
-To get started you need to follow three important steps:
+To get started make sure you have Admin rights on your machine and follow these three important steps:
 
 1. Install the prerequistites
 2. Clone this repo
@@ -20,15 +20,22 @@ You must have the following installed on your system to make this project work:
 * Git
 * NodeJS
 * Python 2.7
-* C++ or node-sass
+* C++ runtime
 
-There are two ways to install these tools. 
-You can either install them directly from the vendor or install them using
-Visual Studio.
+The easiest way to install them is by using
+the Visual Studio installer.
 
-#### Visual Studio based install
-If you already have Visual Studio installed, using the Visual Studio 
-installer is the preffered method. Follow the instructions below.
+If you do not have a recent version of Visual Studio. You can get the community edition from:
+https://visualstudio.microsoft.com/vs/
+
+During the install phase for Visual Studio make sure to select:
+
+* Git
+* Node
+* Python 2.7
+* C++ Desktop Development
+
+If you already have Visual Studio installed, follow the instructions below.
 
 1. Navigate to Control Panel
 2. Go to Programs
@@ -40,41 +47,28 @@ installer is the preffered method. Follow the instructions below.
 8. Choose the packages you want (Git, Node, Python, C++)
 10. Select Next
 
-#### Direct from the Vendor install
+After everything is installed. Reboot.
 
-##### Git
-Navigate to: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git and follow the installation instructions for your OS. Use the default settings when installing (Next, Next, Next....)
+When your machine comes back make sure to add the NPM folder to your System's PATH. 
 
-##### NodeJS
-Navigate to: https://nodejs.org and download and install the latest "LTS" version of Node.
+1. From the desktop, right-click My Computer and click Properties.
+2. In the System Properties window, click on the Advanced tab.
+3. In the Advanced section, click the Environment Variables button.
+4. in the Environment Variables window, highlight the Path variable in the Systems Variable section and click the Edit button. Make sure the following path appears at the end of the PATH string: `c:\Users\<username>\AppData\Roaming\npm;`
 
-##### Python
-Navigate to: https://www.python.org/downloads/ and download and install Python 2.7.x 
-
-##### node-sass
-After installing Node, open a command prompt and type
-```bash
-npm i -g node-sass
-```
-If you get an error about SELF_SIGNED SSL CERTS run 
-```bash
-npm config set strict-ssl false
-npm config set registry="http://registry.npmjs.org/"
-```
-and then try installing node-sass again via
-```bash
-npm i -g node-sass
-```
+Don't forget to replace `<username>` with your actual Windows username.
 
 ### 2. Cloning this repo
-At the comand prompt type:
+Open a command prompy and run:
 ```bash
 git -c http.sslVerify=false clone https://github.com/arcdev1/theme-cnsc-fepoc.git
 ```
 
 ### 3. Run the setup script
-Run the setup script from /script folder in the project directory:
-```bash 
+At the command prompt, run the following commands:
+```bash
+npm config set strict-ssl false
+npm config set registry="http://registry.npmjs.org/"
 cd theme-cnsc-fepoc
 cd script
 setup
@@ -86,11 +80,18 @@ If you see errors relating to `postinstall` run the following command from the p
 npm run postinstall
 ```
 
+*Note:* Every time you open a new Command Prompt, you will need to run the following to avoid SELF_SIGNED_CERT errors:
+```bash
+npm config set strict-ssl false
+npm config set registry="http://registry.npmjs.org/"
+```
+
 ## Building the Site
 From the project's root folder `/theme-cnsc-fepoc` run the following command:
 ```bash
 grunt 
 ```
+
 ## Serving the Site from Localhost
 Install `httpster` with the following command:
 ```bash
